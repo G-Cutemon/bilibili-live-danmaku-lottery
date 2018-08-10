@@ -214,9 +214,10 @@ window.biWebSock = (function() {
             }
 
             socket.onclose = function() {
-//              if (this.roomid) {
-                    console.log('%c 弹幕服务器关闭', "color: red")
-//              }
+                if (this.roomid) {
+					biWebSock.disconnect();
+                    console.log('%c 弹幕服务器关闭，1分钟后尝试重连', "color: red");
+                }
             }
 
             self.socket = socket
