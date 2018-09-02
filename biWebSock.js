@@ -199,6 +199,7 @@ window.biWebSock = (function() {
                                 self.fn.call(null, {
                                 	uid: body.info[2][0],
                                     name: body.info[2][1],
+                                    admin: body.info[2][2],
                                     text: body.info[1],
                                     metal_name: body.info[3][1] || "没勋章",
                                     metal_level: body.info[3][0] || "0",
