@@ -194,15 +194,27 @@ window.biWebSock = (function() {
 //                          console.log(bytes2str(recData))
                             let body = JSON.parse(bytes2str(recData));
                               console.log(body); // 弹幕、礼物、系统公告
-                            if (body.cmd === 'DANMU_MSG') {
+                            if(body.cmd === 'DANMU_MSG') {
 //                              console.log(body.info[2][1], ':', body.info[1]) // 用户：弹幕内容
                                 self.fn.call(null, {
-                                	uid: body.info[2][0],
+                                    uid: body.info[2][0],
                                     name: body.info[2][1],
                                     admin: body.info[2][2],
                                     text: body.info[1],
                                     metal_name: body.info[3][1] || "没勋章",
                                     metal_level: body.info[3][0] || "0",
+                                })
+                            } else if(body.cmd === 'GUARD_BUY') {
+                                self.fn.call(null, {
+                                    username: body.data.username,
+                                    gift_name: body.data.gift_name,
+                                })
+                            } else if(body.cmd === 'SEND_GIFT') {
+                                self.fn.call(null, {
+                                    coin_type: body.data.coin_type,
+                                    giftName: body.data.giftName,
+                                    uname: body.data.uname,
+                                    num: body.data.num
                                 })
                             }
                             data.body.push(body)
