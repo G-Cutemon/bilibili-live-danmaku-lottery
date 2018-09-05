@@ -197,6 +197,7 @@ window.biWebSock = (function() {
                             if(body.cmd === 'DANMU_MSG') {
 //                              console.log(body.info[2][1], ':', body.info[1]) // 用户：弹幕内容
                                 self.fn.call(null, {
+                                	cmd: body.cmd,
                                     uid: body.info[2][0],
                                     name: body.info[2][1],
                                     admin: body.info[2][2],
@@ -206,11 +207,13 @@ window.biWebSock = (function() {
                                 })
                             } else if(body.cmd === 'GUARD_BUY') {
                                 self.fn.call(null, {
+                                	cmd: body.cmd,
                                     username: body.data.username,
                                     gift_name: body.data.gift_name,
                                 })
                             } else if(body.cmd === 'SEND_GIFT') {
                                 self.fn.call(null, {
+                                	cmd: body.cmd,
                                     coin_type: body.data.coin_type,
                                     giftName: body.data.giftName,
                                     uname: body.data.uname,
