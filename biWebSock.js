@@ -1,4 +1,4 @@
-window.biWebSock = (function() {
+window.biWebSock = (function () {
     var dataStruct = [{
         name: "Header Length",
         key: "headerLen",
@@ -126,20 +126,20 @@ window.biWebSock = (function() {
     }
 
     Room.prototype = {
-        sendBeat: function() {
+        sendBeat: function () {
             var self = this
             self.timer = setInterval(function () {
                 self.socket.send(generatePacket())
             }, 3000)
         },
-        destroy: function() {
+        destroy: function () {
             clearTimeout(this.timer)
             this.socket.close()
             this.socket = null
             this.timer = null
             this.roomid = null
         },
-        joinRoom: function(rid, uid) {
+        joinRoom: function (rid, uid) {
             rid = rid || 22557
             uid = uid || 193351
             var packet = JSON.stringify({
@@ -148,29 +148,29 @@ window.biWebSock = (function() {
             })
             return generatePacket(7, packet)
         },
-        init: function(roomid) {
+        init: function (roomid) {
             var self = this
             self.roomid = roomid
             var socket = new WebSocket(wsUrl)
             socket.binaryType = 'arraybuffer'
-            socket.onopen = function(event) {
-            	if(socket.readyState == 1){
-            		console.log("%c 连接弹幕服务器成功", "color: blue");
-            	} else {
-            		console.log("%c 连接失败了，错误码：" + readyState, "color: red");
-            	}
-            	
+            socket.onopen = function (event) {
+                if (socket.readyState == 1) {
+                    console.log("%c 连接弹幕服务器成功", "color: blue");
+                } else {
+                    console.log("%c 连接失败了，错误码：" + readyState, "color: red");
+                }
+
                 var join = self.joinRoom(roomid)
                 socket.send(join.buffer)
                 self.sendBeat(socket)
             }
 
-            socket.onmessage = function(event) {
+            socket.onmessage = function (event) {
                 var dataView = new DataView(event.data)
-//              console.log(event.data);
+                //              console.log(event.data);
                 var data = {}
                 data.packetLen = dataView.getUint32(0)
-                dataStruct.forEach(function(item) {
+                dataStruct.forEach(function (item) {
                     if (item.bytes === 4) {
                         data[item.key] = dataView.getUint32(item.offset)
                     } else if (item.bytes === 2) {
@@ -183,37 +183,41 @@ window.biWebSock = (function() {
                     for (var offset = 0; offset < dataView.byteLength; offset += packetLen) {
                         packetLen = dataView.getUint32(offset)
                         headerLen = dataView.getUint16(offset + 4)
-//                      console.log(dataView.byteLength,offset,packetLen,headerLen);
+                        //                      console.log(dataView.byteLength,offset,packetLen,headerLen);
 
                         var recData = []
                         for (var i = offset + headerLen; i < offset + packetLen; i++) {
                             recData.push(dataView.getUint8(i))
                         }
-//                      console.log(recData);
+                        //                      console.log(recData);
                         try {
-//                          console.log(bytes2str(recData))
+                            //                          console.log(bytes2str(recData))
                             let body = JSON.parse(bytes2str(recData));
-                              console.log(body); // 弹幕、礼物、系统公告
-                            if(body.cmd === 'DANMU_MSG') {
-//                              console.log(body.info[2][1], ':', body.info[1]) // 用户：弹幕内容
+                            console.log(body); // 弹幕、礼物、系统公告
+                            if (body.cmd === 'DANMU_MSG') {
+                                //                              console.log(body.info[2][1], ':', body.info[1]) // 用户：弹幕内容
                                 self.fn.call(null, {
-                                	cmd: body.cmd,
+                                    cmd: body.cmd,
                                     uid: body.info[2][0],
                                     name: body.info[2][1],
                                     admin: body.info[2][2],
+                                    vip: body.info[2][3],
+                                    svip: body.info[2][4],
                                     text: body.info[1],
                                     metal_name: body.info[3][1] || "没勋章",
                                     metal_level: body.info[3][0] || "0",
+                                    user_level: body.info[4][0],
+                                    guard: body.info[7][0],
                                 })
-                            } else if(body.cmd === 'GUARD_BUY') {
+                            } else if (body.cmd === 'GUARD_BUY') {
                                 self.fn.call(null, {
-                                	cmd: body.cmd,
+                                    cmd: body.cmd,
                                     username: body.data.username,
                                     gift_name: body.data.gift_name,
                                 })
-                            } else if(body.cmd === 'SEND_GIFT') {
+                            } else if (body.cmd === 'SEND_GIFT') {
                                 self.fn.call(null, {
-                                	cmd: body.cmd,
+                                    cmd: body.cmd,
                                     coin_type: body.data.coin_type,
                                     giftName: body.data.giftName,
                                     uname: body.data.uname,
@@ -221,7 +225,7 @@ window.biWebSock = (function() {
                                 })
                             }
                             data.body.push(body)
-//                          console.log(data.body);
+                            //                          console.log(data.body);
                         } catch (e) {
                             // console.log('tcp 校验失败，重新发送')
                         }
@@ -229,39 +233,41 @@ window.biWebSock = (function() {
                 }
             }
 
-            socket.onclose = function() {
-//              if (this.roomid) {
-					biWebSock.disconnect();
-                    console.log('%c 弹幕服务器关闭，1分钟后尝试重连', "color: red");
-//              }
+            socket.onclose = function () {
+                //              if (this.roomid) {
+                biWebSock.disconnect(1);
+                //              }
             }
 
             self.socket = socket
         },
 
-        then: function(fn) {
+        then: function (fn) {
             this.fn = fn
         }
     }
 
     return {
         room: null,
-        start: function(roomid) {
-        	$('.danmaku_info').empty();
-        	$('.danmaku_info').eq(0).prepend('<div style="color: green">获取弹幕中……</div>');
+        start: function (roomid) {
+            $('.danmaku_info').empty();
+            $('.danmaku_info').eq(0).prepend('<div style="color: green">获取弹幕中……</div>');
             console.log('%c 正在进入房间：' + roomid + '...', "color: blue")
             this.room = new Room()
             this.room.init(roomid)
             return this.room
         },
-        disconnect: function() {
-        	$('.danmaku_info').empty();
-        	$('.danmaku_info').eq(0).prepend('<div style="color: indianred">弹幕获取停止……</div>');
+        disconnect: function (rc) {
+            $('.danmaku_info').empty();
+            $('.danmaku_info').eq(0).prepend('<div style="color: indianred">弹幕获取停止……</div>');
             if (this.room) {
                 console.log('%c 正在退出房间：' + this.room.roomid + '...', "color: red")
+                if (rc) {
+                    console.log('%c 弹幕服务器关闭，1分钟后尝试重连', "color: red");
+                }
                 this.room.destroy()
                 this.room = null
-            }  
+            }
         }
     }
 })()
