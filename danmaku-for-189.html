@@ -4,154 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>欧洲狐宝黑幕姬v0.52</title>
+	<title>欧洲狐宝黑幕姬 v0.61</title>
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<style>
-		html,
-		body {
-			height: 100%;
-			background: #ddd;
-		}
-
-		.info {
-			line-height: 40px;
-		}
-
-		#content {
-			line-height: 30px;
-			background: mediumpurple;
-			text-align: center;
-			color: #fff;
-			padding: 10px;
-			padding-bottom: 0;
-		}
-
-		.clean,
-		.boom {
-			width: 100%;
-			line-height: 50px;
-			display: block;
-			color: #fff;
-			font-size: 24px;
-		}
-
-		.start,
-		.end {
-			line-height: 50px;
-			display: inline-block;
-			color: #fff;
-			font-size: 24px;
-		}
-
-		.start {
-			width: 50%;
-		}
-
-		.green {
-			background: green;
-		}
-
-		.darkgreen {
-			background: darkgreen;
-		}
-
-		.end {
-			width: 100%;
-			background: indianred;
-		}
-
-		.btn {
-			border-radius: 0;
-			border: 0;
-		}
-
-		.boom,
-		.boom:active,
-		.boom:focus,
-		.boom:active:focus,
-		.boom:active:hover {
-			background: #444;
-			border-color: #000;
-		}
-
-		.boom:hover {
-			background: #000;
-			border-color: #000;
-		}
-
-		.clean,
-		.storage_clean {
-			background: deepskyblue;
-		}
-
-		#input,
-		#lowest_level,
-		#highest_level,
-		#count {
-			width: 15%;
-			line-height: 22px;
-			color: #000;
-			outline: none;
-			box-sizing: border-box;
-			padding-left: 5px;
-			text-align: center;
-		}
-
-		.danmaku_pool,
-		.lottery_pool {
-			position: relative;
-			float: left;
-			width: 50%;
-			height: 400px;
-		}
-
-		.danmaku_content,
-		.lottery_content {
-			height: 370px;
-			overflow: auto;
-		}
-
-		.danmu,
-		.danmaku_info {
-			border-width: 0 1px 1px;
-			border-style: solid;
-			border-color: #0df;
-			background: #fff;
-			width: 100%;
-			line-height: 30px;
-			/*min-height: 40px;*/
-			padding-left: 10px;
-			box-sizing: border-box;
-			font-size: 12px;
-		}
-
-		.danmu div {
-			display: inline-block;
-		}
-
-		/*.danmaku_info, .lottery_member {
-			position: absolute;
-			margin-bottom: 30px;
-		}*/
-		.lottory,
-		.lottery_member {
-			border: 1px solid #f6be18;
-			border-bottom: 0;
-			background: #e2f93321;
-			width: 100%;
-			line-height: 30px;
-			padding-left: 10px;
-			box-sizing: border-box;
-			font-size: 12px;
-		}
-
-		.arr_list {
-			width: 100%;
-			line-height: 30px;
-			padding-left: 10px;
-			box-sizing: border-box;
-		}
-	</style>
 	<style type="text/css">
 		.fans-medal-item {
 			display: inline-block;
@@ -192,7 +46,7 @@
 		.fans-medal-item.special-medal .union {
 			background-repeat: no-repeat;
 			background-image: url(data:image/png;
-			base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAYAAAAbvf3sAAAAAXNSR0IArs4c6QAAAKRJREFUKBWVUMENgzAQO1DHgEmYofxgHRiJXz9MwAL98O2nD8QGwRYXSMlFKpasu9jnS0DEgHOuBzvDktwSob3BFqFRWSXmdhlDDRii8YGHb4w6Q1tU/xr+KWE1bzi2no5IDmMFn8pVzRqVlMiHQExK9gP4UbInDj/jSbf+VVK/NRm2Ai9Ml0r2v+CTLij8BPTy4rnoGzLAB1gZCM/Wk0I/6m8HNoK7rij43fREAAAAAElFTkSuQmCC);
+ base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAYAAAAbvf3sAAAAAXNSR0IArs4c6QAAAKRJREFUKBWVUMENgzAQO1DHgEmYofxgHRiJXz9MwAL98O2nD8QGwRYXSMlFKpasu9jnS0DEgHOuBzvDktwSob3BFqFRWSXmdhlDDRii8YGHb4w6Q1tU/xr+KWE1bzi2no5IDmMFn8pVzRqVlMiHQExK9gP4UbInDj/jSbf+VVK/NRm2Ai9Ml0r2v+CTLij8BPTy4rnoGzLAB1gZCM/Wk0I/6m8HNoK7rij43fREAAAAAElFTkSuQmCC);
 		}
 
 		.fans-medal-item .label,
@@ -476,21 +330,265 @@
 			color: #f6be18;
 		}
 	</style>
+	<style>
+		html,
+		body {
+			height: 100%;
+			background: #ddd;
+		}
+
+		input[type=checkbox] {
+			transform: scale(1.2);
+		}
+
+		.v-middle {
+			vertical-align: middle;
+		}
+
+		.info {
+			line-height: 40px;
+		}
+
+		#content {
+			line-height: 30px;
+			background: mediumpurple;
+			text-align: center;
+			color: #fff;
+			padding: 10px;
+			padding-bottom: 0;
+		}
+
+		.clean,
+		.boom {
+			width: 100%;
+			line-height: 50px;
+			display: block;
+			color: #fff;
+			font-size: 24px;
+		}
+
+		.start,
+		.end {
+			line-height: 50px;
+			display: inline-block;
+			color: #fff;
+			font-size: 24px;
+		}
+
+		.start {
+			width: 50%;
+		}
+
+		.green {
+			background: green;
+		}
+
+		.darkgreen {
+			background: darkgreen;
+		}
+
+		.end {
+			width: 100%;
+			background: indianred;
+		}
+
+		.btn {
+			border-radius: 0;
+			border: 0;
+		}
+
+		.boom,
+		.boom:active,
+		.boom:focus,
+		.boom:active:focus,
+		.boom:active:hover {
+			background: #444;
+			border-color: #000;
+		}
+
+		.boom:hover {
+			background: #000;
+			border-color: #000;
+		}
+
+		.clean,
+		.storage_clean {
+			background: deepskyblue;
+		}
+
+		.form-control {
+			/* width: 15%; */
+			line-height: 22px;
+			color: #000;
+			outline: none;
+			box-sizing: border-box;
+			padding-left: 5px;
+			text-align: center;
+		}
+
+		.danmaku_pool,
+		.lottery_pool {
+			position: relative;
+			float: left;
+			width: 50%;
+			height: 400px;
+		}
+
+		.danmaku_content,
+		.lottery_content {
+			height: 370px;
+			overflow: auto;
+		}
+
+		.danmu,
+		.danmaku_info {
+			border-width: 0 1px 1px;
+			border-style: solid;
+			border-color: #0df;
+			background: #fff;
+			width: 100%;
+			line-height: 30px;
+			/*min-height: 40px;*/
+			padding-left: 10px;
+			box-sizing: border-box;
+			font-size: 12px;
+		}
+
+		.danmu div {
+			display: inline-block;
+		}
+
+		/*.danmaku_info, .lottery_member {
+			position: absolute;
+			margin-bottom: 30px;
+		}*/
+		.lottory,
+		.lottery_member {
+			border: 1px solid #f6be18;
+			border-bottom: 0;
+			background: #e2f93321;
+			width: 100%;
+			line-height: 30px;
+			padding-left: 10px;
+			box-sizing: border-box;
+			font-size: 12px;
+		}
+
+		.arr_list {
+			width: 100%;
+			line-height: 30px;
+			padding-left: 10px;
+			box-sizing: border-box;
+		}
+
+		.winner_box{
+			height: 150px;
+			border-radius: 5px;
+			margin-bottom: 10px;
+			color: #000;
+			background-color: rgba(255,255,255,0.5) ;
+			overflow-y: auto;
+		}
+
+	</style>
+
 </head>
 
 <body>
-	<div id="content">
+	<div id="content" class="container-fluid">
 		<p class="info">
 			基于开源项目 <a target="_blank" href="https://github.com/LeeeeeeM/bilibili-web-socket" style="color: indigo;">bilibili-web-socket</a>
 			的二次开发，感谢原作者。<br />
 			——by 萌萌兽<br />
-
-			<!--<input type="number" placeholder="请输入房间号码,例如5279" id="input"><br />-->
-			抽奖范围：<input type="number" placeholder="勋章最低等级,默认为1" id="lowest_level"> -
-			<input type="number" placeholder="勋章最高等级,默认为20" id="highest_level"><br />
-			设置中奖人数：<input type="number" placeholder="请输入数字,默认为1" id="count" /><br />
-			中奖名单：<span class="winner_list"></span><button class="storage_clean btn btn-info">清空中奖名单</button>
 		</p>
+		<!--<input type="number" placeholder="请输入房间号码,例如5279" id="input"><br />-->
+		<div class="row">
+			<div class="option col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>抽奖条件限制</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input class="v-middle" type="checkbox" name="isMedalName" onclick="onChecked(this)" checked />
+						<span class="v-middle">勋章名：</span>
+					</span>
+					<input class="form-control" type="text" placeholder="输入勋章名" value="狐宝" id="medal_name" readonly />
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input class="v-middle" type="checkbox" name="isMedalLevel" onclick="onChecked(this)" checked />
+						<span class="v-middle">勋章等级范围：</span>
+					</span>
+					<input class="form-control" type="number" placeholder="最小值，默认为1" id="medal_level_min" />
+					<span class="input-group-addon">-</span>
+					<input class="form-control" type="number" placeholder="最大值，默认为20" id="medal_level_max" />
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input class="v-middle" type="checkbox" name="isUserLevel" onclick="onChecked(this)" checked />
+						<span class="v-middle">用户等级范围：</span>
+					</span>
+					<input class="form-control" type="number" placeholder="最小值，默认为1" id="user_level_min" />
+					<span class="input-group-addon">-</span>
+					<input class="form-control" type="number" placeholder="最大值，默认为60" id="user_level_max" />
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input class="v-middle" type="checkbox" name="isDanmaku" onclick="onChecked(this)" />
+						<span class="v-middle">弹幕内容限定：</span>
+					</span>
+					<input class="form-control" type="text" placeholder="输入指定弹幕内容" id="danmaku_setting" />
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input class="v-middle" type="checkbox" name="isExtra" onclick="onChecked(this)" />
+						<span class="v-middle ">附加条件限定：</span>
+					</span>
+					<!-- <span class="input-group-addon"> -->
+					<select class="form-control" id="isAdmin" onchange="onSelected(this)">
+						<option value="0">无需是房管</option>
+						<option value="1">并且是房管</option>
+						<option value="2">或是房管</option>
+						<option value="3">不能是房管</option>
+					</select>
+					<select class="form-control" id="isGuard" onchange="onSelected(this)">
+						<option value="0">无需是舰长</option>
+						<option value="1">并且是舰长</option>
+						<option value="2">或是舰长</option>
+						<option value="3">不能是舰长</option>
+					</select>
+					<select class="form-control" id="isVip" onchange="onSelected(this)">
+						<option value="0">无需是姥爷</option>
+						<option value="1">并且是姥爷</option>
+						<option value="2">或是姥爷</option>
+						<option value="3">不能是姥爷</option>
+					</select>
+					<select class="form-control" id="isCutemon" onchange="onSelected(this)" style="width: 50%;">
+						<option value="0">无需黑幕</option>
+						<option value="1">黑幕萌萌兽</option>
+						<option value="2">黑幕绒绒</option>
+						<option value="3">自定义黑幕（未实现）</option>
+					</select>
+					<input class="form-control" type="number" placeholder="黑幕几率%，最高100，默认10" id="black_percentage" style="width: 50%;" />
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input class="v-middle" type="checkbox" checked disabled />
+						<span class="v-middle">设置中奖人数：</span>
+					</span>
+					<input class="form-control" type="number" placeholder="请输入数字,默认为1" id="winner_amount" />
+				</div>
+
+			</div>
+			<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>中奖名单</div>
+				<div class="winner_box">
+					<div class="winner_list">
+
+					</div>
+				</div>
+				<button class="storage_clean btn btn-info">清空中奖名单</button>
+			</div>
+		</div>
+
 		<div>
 			<span style="display: inline-block; width: 49%;">中奖率：1 / 抽奖人数</span>
 			<span style="display: inline-block; width: 49%;">中奖率：用户发送的弹幕数 / 总弹幕数</span>
@@ -525,7 +623,12 @@
 	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 	<script src="./biWebSock.js"></script>
 	<script type="text/javascript">
-		//		biWebSock.start(5096).then(lotteryCrazy)
+		var CONFIG = {
+			isMedalName: 1,
+			isMedalLevel: 1,
+			isUserLevel: 1,
+		};
+		// biWebSock.start(7685334).then(lotteryCrazy)
 		$('.clean').eq(0).bind('click', function () { // 清空弹幕抽奖池
 			$('.danmaku_content').eq(0).empty();
 			$('.lottery_info').eq(0).empty();
@@ -546,7 +649,7 @@
 		$('.start').eq(1).bind('click', function () { // 刷爆模式
 			var number = $('#input').val();
 			biWebSock.disconnect();
-			var room = biWebSock.start(70270);
+			var room = biWebSock.start(22557);
 			room.then(lotteryCrazy)
 		})
 		$('.end').eq(0).bind('click', function () {
@@ -586,41 +689,87 @@
 					randomSort(lucky_numarr, lucky_numarrnew);
 				}
 				console.log(lucky_numarrnew);
-				var count = $('#count').val() || 1;
-				if (count % 1 != 0 || count <= 0 || count > lottery_arr.length) {
+				var winner_amount = $('#winner_amount').val() || 1;
+				if (winner_amount % 1 != 0 || winner_amount <= 0 || winner_amount > lottery_arr.length) {
 					return alert('无效的抽奖人数');
 				}
 				var storage_name = '';
-				var lucky_dogs = '<div class="lottory">萌萌兽被水淹没，不知所措，经过不断摸索，摸到了以下弹幕_(:з」∠)_<br />';
-				for (var i = 0; i < count; i++) {
+				var lucky_dogs;
+				if (CONFIG.isExtra) {
+					switch (CONFIG.isCutemon) {
+						case 1:
+							var rd_num = Math.random();
+							var black_percentage = $('#black_percentage').val() / 100 || 0.1;
+							if (rd_num < black_percentage) {
+								lucky_dogs =
+									'<div class="lottory">本次抽奖触发了不可描述的黑幕，中奖者是萌萌兽！萌萌兽牛逼！(๑•́ ₃ •̀๑)</div>';
+								storage_name += '<span>萌萌兽 | </span>';
+								$('.lottory').remove();
+								$('.lottery_content').eq(0).append(lucky_dogs);
+								$('.winner_list').eq(0).append(storage_name);
+								return;
+							}
+							break;
+						case 2:
+							var rd_num = Math.random();
+							var black_percentage = $('#black_percentage').val() / 100 || 0.1;
+							if (rd_num < black_percentage) {
+								lucky_dogs =
+									'<div class="lottory">本次抽奖触发了不可描述的黑幕，中奖者绒绒！绒绒真可爱啵啵啵！(｡･ω･｡)ﾉ♡</div>';
+								storage_name += '<span>绒绒 | </span>';
+								$('.lottory').remove();
+								$('.lottery_content').eq(0).append(lucky_dogs);
+								$('.winner_list').eq(0).append(storage_name);
+								return;
+							}
+							break;
+						case 3:
+							// todo
+							break;
+						default:
+							break;
+					}
+				}
+				lucky_dogs = '<div class="lottory">萌萌兽被水淹没，不知所措，经过不断摸索，摸到了下面几条弹幕_(:з」∠)_<br />';
+				for (var i = 0; i < winner_amount; i++) {
 					if (!lottery_arr[lucky_numarrnew[i]]) {
 						alert('哎呀~没人来交易了……');
 						continue;
-					} else if ($.inArray(lottery_arr[lucky_numarrnew[i]][0], winners_contrast) != -1) {
-						if (count >= lottery_arr.length) {
+					} else if ($.inArray(lottery_arr[lucky_numarrnew[i]][0], winners_contrast) != -
+						1) {
+						if (winner_amount >= lottery_arr.length) {
 							return alert('出错了，去重后设置的中奖人数大于参加抽奖的人数');
 						}
-						count++;
+						winner_amount++;
 						continue;
 					} else if (sessionStorage.getItem(lottery_arr[lucky_numarrnew[i]][0])) { // 多次中奖处理机制
-						alert('命运石之门选中了【' + lottery_arr[lucky_numarrnew[i]][1] + '】' + '\n' + '但是你已经被啪过了！' + '\n' +
+						alert('命运石之门选中了【' + lottery_arr[lucky_numarrnew[i]][1] + '】' + '\n' +
+							'但是你已经被啪过了！' +
+							'\n' +
 							'喜新厌旧的萌萌兽并不想跟你交易第二次' +
 							'\n' + '点击确定换个人交易_(:з」∠)_');
-						count++;
+						winner_amount++;
 						continue;
 					} else if (lottery_arr[lucky_numarrnew[i]]) {
 						winners_contrast.push(lottery_arr[lucky_numarrnew[i]][0]);
-						sessionStorage.setItem(lottery_arr[lucky_numarrnew[i]][0], lottery_arr[lucky_numarrnew[i]][1]);
-						lucky_dogs += '<div class="fans-medal-item level-' + lottery_arr[lucky_numarrnew[i]][3] +
-							'"><span class="label">' + lottery_arr[lucky_numarrnew[i]][2] + '</span><span class="level">' + lottery_arr[
+						sessionStorage.setItem(lottery_arr[lucky_numarrnew[i]][0], lottery_arr[
+							lucky_numarrnew[
+								i]][1]);
+						lucky_dogs += '<div class="fans-medal-item level-' + lottery_arr[
+								lucky_numarrnew[i]][3] +
+							'"><span class="label">' + lottery_arr[lucky_numarrnew[i]][2] +
+							'</span><span class="level">' + lottery_arr[
 								lucky_numarrnew[i]][3] +
 							'</span></div><span style="padding-left: 4px;"></span><span style="padding-left: 4px; color: blue;">' +
 							lottery_arr[lucky_numarrnew[i]][1] + ' [ uid: ' +
-							lottery_arr[lucky_numarrnew[i]][0] + ' ] :</span> ' + lottery_arr[lucky_numarrnew[i]][4] + '</span><br />';
-						storage_name += '<span>' + lottery_arr[lucky_numarrnew[i]][1] + ' | </span>';
+							lottery_arr[lucky_numarrnew[i]][0] + ' ] :</span> ' + lottery_arr[
+								lucky_numarrnew[i]]
+							[4] + '</span><br />';
+						storage_name += '<span>' + lottery_arr[lucky_numarrnew[i]][1] +
+							' | </span>';
 					}
 				}
-				lucky_dogs += '<span style="padding-left: 4px;">那么是直接打死还是走程序？</span></div>';
+				lucky_dogs += '<span style="padding-left: 4px;">是直接打死还是走程序？</span></div>';
 				if (storage_name) {
 					$('.lottory').remove();
 					$('.lottery_content').eq(0).append(lucky_dogs);
@@ -636,13 +785,23 @@
 		// 展示获取到的弹幕并加入抽奖池
 		var lottery_arr = [];
 		var lottery_contrast_arr = [];
+		var medal_level_min = 1,
+			medal_level_max = 20,
+			user_level_min = 1,
+			user_level_max = 60,
+			danmaku_setting,
+			pass = 0;
 		// 普通模式
 		function lotteryFilter(res) {
+			if (res.cmd !== "DANMU_MSG") {
+				return;
+			}
 			//			console.log(res.uid);
-			var danmaku_content = '<div class="danmu"><div class="fans-medal-item level-' + res.metal_level +
-				'"><span class="label">' + res.metal_name + '</span><span class="level">' + res.metal_level +
-				'</span></div><div class="level-' + res.metal_level +
-				'" style="display: inline-block;"><span class="level" style="padding-left: 4px;">' + res.name + '   :</span>   ' +
+			var danmaku_content = '<div class="danmu"><div class="fans-medal-item level-' + res.medal_level +
+				'"><span class="label">' + res.medal_name + '</span><span class="level">' + res.medal_level +
+				'</span></div><div class="level-' + res.medal_level +
+				'" style="display: inline-block;"><span class="level" style="padding-left: 4px;">' + res.name +
+				'   :</span>   ' +
 				res.text + '</div></div>'
 			$('.danmaku_content').eq(0).append(danmaku_content);
 			$('.danmaku_content').eq(0).scrollTop($('.danmaku_content')[0].scrollHeight);
@@ -650,33 +809,201 @@
 				$(".danmu").eq(0).remove()
 			}
 
-			var lowest_level = $('#lowest_level').val() || 1,
-				highest_level = $('#highest_level').val() || 20;
-			if (res.metal_name == "狐宝" && res.metal_level >= lowest_level && res.metal_level <= highest_level) {
 
-				if ($.inArray(res.uid, lottery_contrast_arr) == -1) {
-					var lottery_join =
-						'<div class="lottory"><span style="padding-right: 4px;">非洲人</span><div class="fans-medal-item level-' + res.metal_level +
-						'"><span class="label">' + res.metal_name + '</span><span class="level">' + res.metal_level +
-						'</span></div><span style="padding-left: 4px; color: blue;">' + res.name +
-						'</span><span style="padding-left: 4px;"> 加入了拉低中奖率的队伍</span></div>'
-					$('.lottery_content').eq(0).append(lottery_join);
-					$('.lottery_content').eq(0).scrollTop($('.lottery_content')[0].scrollHeight);
-					lottery_arr.push([res.uid, res.name, res.metal_name, res.metal_level]);
-					lottery_contrast_arr.push(res.uid);
-					if ($(".lottory").length >= 15) {
-						$(".lottory").eq(0).remove()
+			switch (CONFIG.isMedalName) {
+				case 0:
+					break;
+				case 1:
+					if (res.medal_name != $('#medal_name').val()) {
+						return;
 					}
-					console.log('%c 【' + res.name + '[ uid: ' + res.uid + ' ]】成为了萌萌兽的朋友交易对象', "color: green");
-					//					console.log(lottery_arr)
-					//					$('.arr_list').remove();
-					//					var arr_list = '<div class="arr_list" style="font-size: 12px;">' + lottery_arr + '</div>';
-					//					$('.lottery_pool').eq(0).prepend(arr_list);
-				} else {
-					console.log('%c 【' + res.name + '[ uid: ' + res.uid + ' ]】已经在等待被黑幕的队伍中了！', "color: red");
+					break;
+				default:
+					break;
+			}
+
+			switch (CONFIG.isMedalLevel) {
+				case 0:
+					break;
+				case 1:
+					medal_level_min = $('#medal_level_min').val() || 1;
+					medal_level_max = $('#medal_level_max').val() || 20;
+					if (res.medal_level < medal_level_min || res.medal_level > medal_level_max) {
+						return;
+					}
+					break;
+				default:
+					break;
+			}
+
+			switch (CONFIG.isUserLevel) {
+				case 0:
+					break;
+				case 1:
+					user_level_min = $('#user_level_min').val() || 1;
+					user_level_max = $('#user_level_max').val() || 60;
+					if (res.user_level < user_level_min || res.user_level > user_level_max) {
+						return;
+					}
+					break;
+				default:
+					break;
+			}
+
+			switch (CONFIG.isDanmaku) {
+				case 0:
+					break;
+				case 1:
+					danmaku_setting = $('#danmaku_setting').val();
+					if (res.text != danmaku_setting) {
+						return;
+					}
+					break;
+				default:
+					break;
+			}
+
+			if (CONFIG.isExtra) {
+				switch (CONFIG.isAdmin) {
+					case 0:
+						break;
+					case 1:
+						if (!res.admin) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					case 2:
+						if (res.admin) {
+							pass += 10;
+						} else {
+							pass++;
+						}
+						break;
+					case 3:
+						if (res.admin) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					default:
+						break;
 				}
+
+				switch (CONFIG.isGuard) {
+					case 0:
+						break;
+					case 1:
+						if (!res.guard) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					case 2:
+						if (res.guard) {
+							pass += 10;
+						} else {
+							pass++;
+						}
+						break;
+					case 3:
+						if (res.guard) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					default:
+						break;
+				}
+
+				switch (CONFIG.isVip) {
+					case 0:
+						break;
+					case 1:
+						if (!res.vip) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					case 2:
+						if (res.vip) {
+							pass += 10;
+						} else {
+							pass++;
+						}
+						break;
+					case 3:
+						if (res.vip) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					default:
+						break;
+				}
+
+				switch (CONFIG.isCutemon) {
+					case 0:
+						break;
+					case 1:
+						if (!res.admin) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					case 2:
+						if (res.admin) {
+							pass += 10;
+						} else {
+							pass++;
+						}
+						break;
+					case 3:
+						if (res.admin) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					default:
+						break;
+				}
+
+				if (pass > 0 && pass < 10) {
+					pass = 0;
+					return;
+				}
+				pass = 0;
+			}
+
+			if ($.inArray(res.uid, lottery_contrast_arr) == -1) {
+				var lottery_join =
+					'<div class="lottory"><span style="padding-right: 4px;">非洲人</span><div class="fans-medal-item level-' +
+					res.medal_level +
+					'"><span class="label">' + res.medal_name + '</span><span class="level">' + res.medal_level +
+					'</span></div><span style="padding-left: 4px; color: blue;">' + res.name +
+					'</span><span style="padding-left: 4px;"> 加入了拉低中奖率的队伍</span></div>'
+				$('.lottery_content').eq(0).append(lottery_join);
+				$('.lottery_content').eq(0).scrollTop($('.lottery_content')[0].scrollHeight);
+				lottery_arr.push([res.uid, res.name, res.medal_name, res.medal_level]);
+				lottery_contrast_arr.push(res.uid);
+				if ($(".lottory").length >= 15) {
+					$(".lottory").eq(0).remove()
+				}
+				console.log('%c 【' + res.name + '[ uid: ' + res.uid + ' ]】成为了萌萌兽的朋友交易对象', "color: green");
+				//					console.log(lottery_arr)
+				//					$('.arr_list').remove();
+				//					var arr_list = '<div class="arr_list" style="font-size: 12px;">' + lottery_arr + '</div>';
+				//					$('.lottery_pool').eq(0).prepend(arr_list);
 			} else {
-				console.log('%c 【' + res.name + '】的勋章不符合条件', "color: red")
+				console.log('%c 【' + res.name + '[ uid: ' + res.uid + ' ]】已经在等待被黑幕的队伍中了！', "color: red");
 			}
 			$('.lottery_member').remove();
 			$('.lottery_info').eq(0).prepend('<div class="lottery_member" style="color: blue; ">当前非洲人的数量为：' +
@@ -685,10 +1012,14 @@
 
 		// 刷爆模式
 		function lotteryCrazy(res) {
-			var danmaku_content = '<div class="danmu"><div class="fans-medal-item level-' + res.metal_level +
-				'"><span class="label">' + res.metal_name + '</span><span class="level">' + res.metal_level +
-				'</span></div><div class="level-' + res.metal_level +
-				'" style="display: inline-block;"><span class="level" style="padding-left: 4px;">' + res.name + '   :</span>   ' +
+			if (res.cmd !== "DANMU_MSG") {
+				return;
+			}
+			var danmaku_content = '<div class="danmu"><div class="fans-medal-item level-' + res.medal_level +
+				'"><span class="label">' + res.medal_name + '</span><span class="level">' + res.medal_level +
+				'</span></div><div class="level-' + res.medal_level +
+				'" style="display: inline-block;"><span class="level" style="padding-left: 4px;">' + res.name +
+				'   :</span>   ' +
 				res.text + '</div></div>'
 			$('.danmaku_content').eq(0).append(danmaku_content);
 			$('.danmaku_content').eq(0).scrollTop($('.danmaku_content')[0].scrollHeight);
@@ -696,34 +1027,218 @@
 				$(".danmu").eq(0).remove()
 			}
 
-			var lowest_level = $('#lowest_level').val() || 1,
-				highest_level = $('#highest_level').val() || 20;
-			if (res.metal_name == "狐宝" && res.metal_level >= lowest_level && res.metal_level <= highest_level) {
-				var lottery_join =
-					'<div class="lottory"><span style="padding-right: 4px;">刷屏大佬</span><div class="fans-medal-item level-' + res.metal_level +
-					'"><span class="label">' + res.metal_name + '</span><span class="level">' + res.metal_level +
-					'</span></div><span style="padding-left: 4px; color: blue;">' + res.name +
-					'</span><span style="padding-left: 4px;"> 正在疯狂刷弹幕</span></div>'
-				$('.lottery_content').eq(0).append(lottery_join);
-				$('.lottery_content').eq(0).scrollTop($('.lottery_content')[0].scrollHeight);
-				if ($(".lottory").length >= 15) {
-					$(".lottory").eq(0).remove()
-				}
-				lottery_arr.push([res.uid, res.name, res.metal_name, res.metal_level, res.text]);
-				lottery_contrast_arr.push(res.uid);
-				console.log('%c 【' + res.name + '[ uid: ' + res.uid + ' ]】成为了萌萌兽的朋友交易对象', "color: green");
-				//					console.log(lottery_arr)
-				//					$('.arr_list').remove();
-				//					var arr_list = '<div class="arr_list" style="font-size: 12px;">' + lottery_arr + '</div>';
-				//					$('.lottery_pool').eq(0).prepend(arr_list);
-			} else {
-				console.log('%c 【' + res.name + '】的勋章不符合条件', "color: red")
+			switch (CONFIG.isMedalName) {
+				case 0:
+					break;
+				case 1:
+					if (res.medal_name != $('#medal_name').val()) {
+						return;
+					}
+					break;
+				default:
+					break;
 			}
+
+			switch (CONFIG.isMedalLevel) {
+				case 0:
+					break;
+				case 1:
+					medal_level_min = $('#medal_level_min').val() || 1;
+					medal_level_max = $('#medal_level_max').val() || 20;
+					if (res.medal_level < medal_level_min || res.medal_level > medal_level_max) {
+						return;
+					}
+					break;
+				default:
+					break;
+			}
+
+			switch (CONFIG.isUserLevel) {
+				case 0:
+					break;
+				case 1:
+					user_level_min = $('#user_level_min').val() || 1;
+					user_level_max = $('#user_level_max').val() || 60;
+					if (res.user_level < user_level_min || res.user_level > user_level_max) {
+						return;
+					}
+					break;
+				default:
+					break;
+			}
+
+			switch (CONFIG.isDanmaku) {
+				case 0:
+					break;
+				case 1:
+					danmaku_setting = $('#danmaku_setting').val();
+					if (res.text != danmaku_setting) {
+						return;
+					}
+					break;
+				default:
+					break;
+			}
+
+			if (CONFIG.isExtra) {
+				switch (CONFIG.isAdmin) {
+					case 0:
+						break;
+					case 1:
+						if (!res.admin) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					case 2:
+						if (res.admin) {
+							pass += 10;
+						} else {
+							pass++;
+						}
+						break;
+					case 3:
+						if (res.admin) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					default:
+						break;
+				}
+
+				switch (CONFIG.isGuard) {
+					case 0:
+						break;
+					case 1:
+						if (!res.guard) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					case 2:
+						if (res.guard) {
+							pass += 10;
+						} else {
+							pass++;
+						}
+						break;
+					case 3:
+						if (res.guard) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					default:
+						break;
+				}
+
+				switch (CONFIG.isVip) {
+					case 0:
+						break;
+					case 1:
+						if (!res.vip) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					case 2:
+						if (res.vip) {
+							pass += 10;
+						} else {
+							pass++;
+						}
+						break;
+					case 3:
+						if (res.vip) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					default:
+						break;
+				}
+
+				switch (CONFIG.isCutemon) {
+					case 0:
+						break;
+					case 1:
+						if (!res.admin) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					case 2:
+						if (res.admin) {
+							pass += 10;
+						} else {
+							pass++;
+						}
+						break;
+					case 3:
+						if (res.admin) {
+							return;
+						} else {
+							pass += 10;
+						}
+						break;
+					default:
+						break;
+				}
+
+				if (pass > 0 && pass < 10) {
+					pass = 0;
+					return;
+				}
+				pass = 0;
+			}
+
+			var lottery_join =
+				'<div class="lottory"><span style="padding-right: 4px;">刷屏大佬</span><div class="fans-medal-item level-' +
+				res.medal_level +
+				'"><span class="label">' + res.medal_name + '</span><span class="level">' + res.medal_level +
+				'</span></div><span style="padding-left: 4px; color: blue;">' + res.name +
+				'</span><span style="padding-left: 4px;"> 正在疯狂刷弹幕</span></div>'
+			$('.lottery_content').eq(0).append(lottery_join);
+			$('.lottery_content').eq(0).scrollTop($('.lottery_content')[0].scrollHeight);
+			if ($(".lottory").length >= 15) {
+				$(".lottory").eq(0).remove()
+			}
+			lottery_arr.push([res.uid, res.name, res.medal_name, res.medal_level, res.text]);
+			lottery_contrast_arr.push(res.uid);
+			console.log('%c 【' + res.name + '[ uid: ' + res.uid + ' ]】成为了萌萌兽的朋友交易对象', "color: green");
+			//					console.log(lottery_arr)
+			//					$('.arr_list').remove();
+			//					var arr_list = '<div class="arr_list" style="font-size: 12px;">' + lottery_arr + '</div>';
+			//					$('.lottery_pool').eq(0).prepend(arr_list);
 			$('.lottery_member').remove();
 			$('.lottery_info').eq(0).prepend('<div class="lottery_member" style="color: blue; ">当前刷屏大佬的刷屏总量为：' +
 				lottery_contrast_arr.length + '</div>');
 		}
 
+		function onChecked(checkbox) {
+			if (checkbox.checked == true) {
+				console.log(checkbox.name);
+				CONFIG[checkbox.name] = 1;
+			} else {
+				console.log("取消勾选");
+				CONFIG[checkbox.name] = 0;
+			}
+
+			console.log(CONFIG)
+		}
+
+		function onSelected(option) {
+			console.log(option.value);
+			CONFIG[option.id] = parseInt(option.value);
+		}
 		// 鼠标点击特效
 		var a_idx = 0;
 		$("body").click(function (e) {
